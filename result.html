@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+            background-image: url('https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F549910%2Fstock-traders.jpg&w=700&op=resize');
+            background-repeat: repeat;
+            background-size: cover;
+            background-color: #cccccc;
+            font-size :50px;
+            color: black;
+            font-weight: bold;
+           }
+      </style>
+</head>
+<body align="center">
+select options
+<form  action="/report" method="POST" >
+  <select id="symbol" name="symbol" style="height: 25px; width: 400px;" >
+  {% for key, value in web_data.items() %}
+  <option value= {{key}}> {{value}} </option>
+  <br><br>
+  {% endfor %}
+  </select>
+  <br><br>
+  <select id="date" name="date" style="height: 25px; width: 300px;">
+    <option value ="daily">last 30 Days</option>
+    <option value ="week">monthly</option>
+    <option value="month">yearly</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Search" >
+</form>
+</body>
+</html>
